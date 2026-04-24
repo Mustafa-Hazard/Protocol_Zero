@@ -1,11 +1,19 @@
-import React from 'react';
 import Message from './message';
-import ListGroup from './components/ListGroup';
+import Alert from './components/Alert';
+import Button from './components/button';
 function App() {
+
+
   return (
     <div>
       <Message />
-      <ListGroup />
+      <Alert>
+        <p>This is an alert message.</p>
+      </Alert>
+      <Button onClick={() => console.log('Button clicked!')}>Click me</Button>
+      <Button color='primary' onClick={() => alert('Button clicked!')} >
+        Click me
+      </Button>
     </div>
   );
 }
