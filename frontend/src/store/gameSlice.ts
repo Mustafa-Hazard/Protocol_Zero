@@ -1,5 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
 import type { Game } from '../types/Game';
 import type { GameFilters } from '../types/Filter';
 import { getGames } from '../services/gameApi';
@@ -17,7 +16,6 @@ const initialState: GameState = {
     loading: false,
     error: null,
 };
-
 export const fetchGames = createAsyncThunk(
     'games/fetchGames',
     async (filters: GameFilters, { rejectWithValue }) => {
@@ -28,7 +26,6 @@ export const fetchGames = createAsyncThunk(
         }
     }
 );
-
 const gameSlice = createSlice({
     name: 'games',
     initialState,
