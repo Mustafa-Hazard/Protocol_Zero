@@ -7,9 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 function App() {
   return (
     <BrowserRouter>
-      {/* Navbar stays at the top for all pages */}
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/game/:id" element={<GameDetail />} />
