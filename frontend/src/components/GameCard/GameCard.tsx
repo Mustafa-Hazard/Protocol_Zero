@@ -1,6 +1,6 @@
 import { Card, Badge } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import type { Game } from '../../types/Game';
+import { Game } from '../../types/Game';
 
 interface Props {
     game: Game;

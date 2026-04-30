@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import type { RootState, AppDispatch } from '../store/store';
+import { RootState, AppDispatch } from '../store/store';
 import { fetchGames, setSelectedGame } from '../store/gameSlice';
-import type { GameFilters } from '../types/Filter';
-import type { Game } from '../types/Game';
+import { GameFilters } from '../types/Filter';
+import { Game } from '../types/Game';
 
 export const useGames = (filters: GameFilters) => {
     const dispatch = useDispatch<AppDispatch>();

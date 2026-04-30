@@ -1,6 +1,6 @@
 import { Row, Col, Spinner, Alert } from 'react-bootstrap';
 import GameCard from '../GameCard/GameCard';
-import type { Game } from '../../types/Game';
+import { Game } from '../../types/Game';
 
 interface Props {
     games: Game[];
