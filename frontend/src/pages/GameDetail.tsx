@@ -1,21 +1,47 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { Container, Row, Col, Badge, Button } from 'react-bootstrap';
-import { mockGames } from '../services/mockData';
+import { Row, Col, Badge, Button, Spinner } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { getGameById } from '../services/gameApi';
+import { Game } from '../types/Game';
 
 const GameDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
+    const [game, setGame] = useState<Game | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
-    const game = mockGames.find(g => g.id === id);
+    useEffect(() => {
+        const fetchGame = async () => {
+            try {
+                if (!id) return;
+                const data = await getGameById(id);
+                setGame(data);
+            } catch (err) {
+                setError('Game not found.');
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchGame();
+    }, [id]);
 
-    if (!game) {
+    if (loading) {
         return (
-            <Container className="min-vh-100 d-flex flex-column align-items-center justify-content-center" style={{ background: '#0d1117' }}>
+            <div className="d-flex justify-content-center align-items-center min-vh-100" style={{ background: '#0d1117' }}>
+                <Spinner animation="border" variant="primary" />
+            </div>
+        );
+    }
+
+    if (error || !game) {
+        return (
+            <div className="d-flex flex-column justify-content-center align-items-center min-vh-100" style={{ background: '#0d1117' }}>
                 <h3 className="text-white">Game not found.</h3>
                 <Button variant="outline-light" className="mt-3" onClick={() => navigate('/')}>
                     Back to Home
                 </Button>
-            </Container>
+            </div>
         );
     }
 

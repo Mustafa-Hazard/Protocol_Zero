@@ -16,16 +16,19 @@ const initialState: GameState = {
     loading: false,
     error: null,
 };
+
 export const fetchGames = createAsyncThunk(
     'games/fetchGames',
     async (filters: GameFilters, { rejectWithValue }) => {
         try {
-            return await getGames(filters);
+            const response = await getGames(filters);
+            return response;
         } catch (error: any) {
             return rejectWithValue(error.message);
         }
     }
 );
+
 const gameSlice = createSlice({
     name: 'games',
     initialState,
@@ -50,5 +53,6 @@ const gameSlice = createSlice({
             });
     },
 });
+
 export const { setSelectedGame } = gameSlice.actions;
 export default gameSlice.reducer;

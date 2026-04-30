@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import type { RootState, AppDispatch } from '../store/store';
+import { RootState, AppDispatch } from '../store/store';
 import {
     setSearch,
     toggleGenre,

@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { GameFilters, SortOption } from '../types/Filter';
+import { GameFilters, SortOption } from '../types/Filter';
 
 
 const initialState: GameFilters = {

@@ -4,20 +4,20 @@ import type { GameFilters } from '../types/Filter';
 
 export const getGames = async (filters: GameFilters): Promise<Game[]> => {
     const { data } = await axiosClient.get('/games', { params: filters });
-    return data;
+    return data.data;
 };
 
 export const getGameById = async (id: string): Promise<Game> => {
     const { data } = await axiosClient.get(`/games/${id}`);
-    return data;
+    return data.data;
 };
 
 export const getGenres = async (): Promise<Genre[]> => {
     const { data } = await axiosClient.get('/genres');
-    return data;
+    return data.data;
 };
 
 export const getPlatforms = async (): Promise<Platform[]> => {
     const { data } = await axiosClient.get('/platforms');
-    return data;
+    return data.data;
 };
