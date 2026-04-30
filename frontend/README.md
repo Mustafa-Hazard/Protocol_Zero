@@ -1,7 +1,3 @@
-This is a professional and comprehensive **README.md** tailored to the technical specifications of your **Protocol-Zero** (Proactive: Zero) project as outlined in your professional summary[cite: 1].
-
----
-
 # Protocol-Zero (Proactive: Zero)
 
 **Protocol-Zero** is a full-stack game discovery platform designed to provide a seamless browsing experience for gamers[cite: 1]. It leverages a modern decoupled architecture, combining a highly responsive React frontend with a robust ASP.NET Core backend to manage a dynamic catalog of games[cite: 1].
