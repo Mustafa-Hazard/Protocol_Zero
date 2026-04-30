@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GameDiscovery.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d02abb06d7b132b96dcaf8dad742c725c90286c5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2742fa2527c0664b23594c10a9daeef89bbe4b4e")]
 [assembly: System.Reflection.AssemblyProductAttribute("GameDiscovery.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GameDiscovery.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
